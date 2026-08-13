@@ -112,10 +112,6 @@
 }
 
 /* Name gradient needs a lighter tail on dark surfaces */
-[data-theme="dark"] .hero-name {
-  background: linear-gradient(100deg, var(--ink-strong) 0%, var(--accent-deep) 100%);
-}
-
 /* ---------------------------------------------------------------------------
    Reset & base
    -------------------------------------------------------------------------- */
@@ -342,10 +338,20 @@ html.js .honor-item.is-visible {
   font-weight: 600;
   letter-spacing: -.01em;
   line-height: 1.05;
-  background: linear-gradient(100deg, var(--ink-strong) 0%, var(--accent-deep) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Solid, theme-appropriate fallback (dark ink in light mode, near-white in
+     dark mode) — the name stays readable even where text-clipping is unsupported. */
+  color: var(--ink-strong);
+}
+/* Gradient-on-text only where the clip is actually supported. Without the guard,
+   an unsupported background-clip turns the glyphs transparent and the light
+   gradient paints a solid block behind them — invisible name. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-name {
+    background: linear-gradient(100deg, var(--ink-strong) 0%, var(--accent-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .hero-title {
