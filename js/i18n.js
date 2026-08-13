@@ -10,6 +10,8 @@ window.I18N = {
     "meta.description": "Wendian Luo — M.Eng. candidate in Computer Technology at Sichuan University. Research in edge intelligence, federated learning, computer vision, and energy-efficient computing.",
 
     // Navigation
+    "brand.mark": "W",
+    "brand.name": "Wendian Luo",
     "nav.about": "About",
     "nav.education": "Education",
     "nav.research": "Research",
@@ -21,6 +23,7 @@ window.I18N = {
     "nav.cv": "CV",
 
     // Hero
+    "hero.name": "Wendian Luo",
     "hero.eyebrow": "Sichuan University · College of Computer Science",
     "hero.title": "M.Eng. candidate in Computer Technology",
     "hero.quote": "Research interests in <em>Edge Intelligence</em>, <em>Federated Learning</em>, <em>Computer Vision</em>, <em>Large Language Models</em>, and <em>Embodied Intelligence</em>.",
@@ -138,6 +141,7 @@ window.I18N = {
     "honors.merit.org": "Sichuan University",
 
     // Footer
+    "footer.name": "Wendian Luo",
     "footer.email": "Email",
     "footer.cv": "CV",
     "footer.copy": "Wendian Luo. Crafted with care in Chengdu, China.",
@@ -151,10 +155,12 @@ window.I18N = {
 
   zh: {
     // Document
-    "meta.title": "Wendian Luo — 研究与工程",
-    "meta.description": "Wendian Luo — 四川大学计算机技术专业硕士研究生。研究方向：边缘智能、联邦学习、计算机视觉与节能计算。",
+    "meta.title": "罗文典 — 研究与工程",
+    "meta.description": "罗文典 — 四川大学计算机技术专业硕士研究生。研究方向：边缘智能、联邦学习、计算机视觉与节能计算。",
 
     // Navigation
+    "brand.mark": "罗",
+    "brand.name": "罗文典",
     "nav.about": "关于",
     "nav.education": "教育",
     "nav.research": "研究",
@@ -166,6 +172,7 @@ window.I18N = {
     "nav.cv": "简历",
 
     // Hero
+    "hero.name": "罗文典",
     "hero.eyebrow": "四川大学 · 计算机学院",
     "hero.title": "计算机技术 · 硕士在读",
     "hero.quote": "研究兴趣：<em>边缘智能</em>、<em>联邦学习</em>、<em>计算机视觉</em>、<em>大语言模型</em> 与 <em>具身智能</em>。",
@@ -283,6 +290,7 @@ window.I18N = {
     "honors.merit.org": "四川大学",
 
     // Footer
+    "footer.name": "罗文典",
     "footer.email": "邮箱",
     "footer.cv": "简历",
     "footer.copy": "Wendian Luo · 用心制作于中国成都。",
