@@ -1,1 +1,521 @@
-<h1>hello,this is lwd!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wendian Luo — Research &amp; Engineering</title>
+  <meta name="description" content="Wendian Luo — M.Eng. candidate in Computer Technology at Sichuan University. Research in edge intelligence, federated learning, computer vision, and energy-efficient computing." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Typography (Fontsource via jsDelivr — China-accessible CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/inter/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/playfair-display/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/jetbrains-mono/index.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark">W</span>
+        <span class="brand-name">Wendian Luo</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#research">Research</a></li>
+          <li><a class="nav-link" href="#publications">Publications</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#honors">Awards</a></li>
+        </ul>
+      </nav>
+
+      <a class="nav-cv" href="assets/WendianLuo_Resume.pdf" download="WendianLuo_Resume.pdf">CV</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Sichuan University · College of Computer Science</p>
+          <h1 class="hero-name">Wendian&nbsp;Luo</h1>
+          <p class="hero-title">M.Eng. candidate in Computer Technology</p>
+          <p class="hero-quote">
+            Research interests in <em>Edge Intelligence</em>, <em>Federated Learning</em>,
+            <em>Computer Vision</em>, <em>Large Language Models</em>, and <em>Embodied Intelligence</em>.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="assets/WendianLuo_Resume.pdf" download="WendianLuo_Resume.pdf">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download CV
+            </a>
+            <a class="btn btn-ghost" href="#publications">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              View Publications
+            </a>
+          </div>
+
+          <ul class="contact-list" aria-label="Contact information">
+            <li>
+              <a href="mailto:1850245174@qq.com">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span>1850245174@qq.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Mr-lwd" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                <span>github.com/Mr-lwd</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+8619180964043">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg>
+                <span>+86 191 8096 4043</span>
+              </a>
+            </li>
+            <li class="contact-static">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Chengdu, China</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-photo">
+          <figure class="portrait">
+            <img src="assets/profile.jpg" alt="Portrait of Wendian Luo" width="274" height="274" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">01 · Profile</p>
+          <h2 class="section-title">About Me</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-summary">
+            <p class="lead">
+              Master's candidate in <strong>Computer Technology</strong> at Sichuan University with research
+              experience in <strong>edge intelligence</strong>, <strong>federated learning</strong>,
+              <strong>computer vision</strong>, and <strong>energy-efficient computing</strong>.
+            </p>
+            <p>
+              First author of peer-reviewed work on semi-asynchronous federated prototype learning and low-power
+              real-time scheduling. Experienced in PyTorch-based algorithm development, heterogeneous edge systems,
+              DVFS-aware optimization, and large language model fine-tuning and deployment.
+            </p>
+          </div>
+
+          <div class="about-interests">
+            <h3>Research Interests</h3>
+            <ul class="interest-list">
+              <li>Edge Intelligence</li>
+              <li>Federated &amp; Distributed Learning</li>
+              <li>Zero-Shot Industrial Anomaly Detection</li>
+              <li>Energy-Efficient AI &amp; Real-Time Systems</li>
+              <li>LLM Evaluation, Fine-Tuning &amp; Deployment</li>
+              <li>Embodied Intelligence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">02 · Academic Path</p>
+          <h2 class="section-title">Education</h2>
+        </header>
+
+        <div class="timeline">
+          <article class="tl-item">
+            <div class="tl-dates">
+              <span class="tl-year">Sep 2024 — Jun 2027</span>
+              <span class="tl-tag">Expected</span>
+            </div>
+            <div class="tl-node" aria-hidden="true"></div>
+            <div class="tl-body">
+              <h3 class="tl-degree">M.Eng. in Computer Technology</h3>
+              <p class="tl-school">Sichuan University · College of Computer Science · Chengdu, China</p>
+              <ul class="tl-points">
+                <li>GPA: 3.65 / 4.00.</li>
+                <li>First-Class Graduate Academic Scholarship.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item">
+            <div class="tl-dates">
+              <span class="tl-year">Sep 2020 — Jun 2024</span>
+            </div>
+            <div class="tl-node" aria-hidden="true"></div>
+            <div class="tl-body">
+              <h3 class="tl-degree">B.Eng. in Computer Science and Technology</h3>
+              <p class="tl-school">Sichuan University · College of Computer Science · Chengdu, China</p>
+              <ul class="tl-points">
+                <li>GPA: 3.76 / 4.00; GPA ranking: 38 / 318 (top 12%); graduate recommendation ranking: 8 / 318.</li>
+                <li>Outstanding Graduate of Sichuan Province, 2024.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH EXPERIENCE ===================== -->
+    <section class="section" id="research">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">03 · Research</p>
+          <h2 class="section-title">Research Experience</h2>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title">TMSC: Zero-Shot Industrial Anomaly Detection</h3>
+              <span class="badge badge-rose">First Author</span>
+              <span class="badge badge-slate">Open Source</span>
+            </div>
+            <p class="card-role">Researcher and Developer ·
+              <a class="card-link" href="https://github.com/Mr-lwd/TMSC" target="_blank" rel="noopener">Project Repository ↗</a>
+            </p>
+            <p class="card-meta">2026</p>
+            <ul class="card-points">
+              <li>Developed a zero-shot anomaly detection pipeline using <strong>DINOv3</strong> and <strong>CLIP</strong>, integrating multi-layer representations, dual-branch prompt adapters, cross-modal attention, and three-region semantic calibration.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title">FedSAE: Semi-Asynchronous Energy-Efficient Federated Prototype Learning</h3>
+              <span class="badge badge-rose">First Author</span>
+            </div>
+            <p class="card-role">First Author and Researcher · Sichuan University</p>
+            <p class="card-meta">2025</p>
+            <ul class="card-points">
+              <li>Designed a semi-asynchronous <strong>end–edge–cloud federated prototype learning</strong> framework that exchanges class-level feature statistics instead of raw data or full model parameters.</li>
+              <li>Validated the energy-saving effectiveness of the framework's dynamic <strong>DVFS</strong> mechanism through experiments on an <strong>NVIDIA Jetson TX2</strong> edge platform.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title">LPSAFS: Low-Power Scheduling with Segmented Frequency Scaling</h3>
+              <span class="badge badge-rose">First Author</span>
+            </div>
+            <p class="card-role">First Author and Researcher · Sichuan University</p>
+            <p class="card-meta">2024</p>
+            <ul class="card-points">
+              <li>Designed a segmented frequency-scaling algorithm based on <strong>minimum-slack allocation</strong> for periodic real-time tasks under discrete DVFS states, deadline constraints, and reliability requirements.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section class="section section-alt" id="publications">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">04 · Scholarly Output</p>
+          <h2 class="section-title">Publications</h2>
+        </header>
+
+        <h3 class="sub-head">Journal Articles</h3>
+        <ol class="pub-list">
+          <li class="pub-item">
+            <span class="badge badge-indigo">Journal</span>
+            <span class="badge badge-rose">Major Revision</span>
+            <p class="pub-text">
+              <strong class="fa">Wendian Luo</strong>, Tong Yu, Junnan Li, Shengxin Dai, Bing Guo, and Zhuohang Jiang,
+              “TMSC: A Tri-Regional Mask-Guided Semantic Calibration Framework for Zero-Shot Anomaly Detection,”
+              <em>Pattern Recognition</em>.
+            </p>
+          </li>
+
+          <li class="pub-item">
+            <span class="badge badge-indigo">Journal</span>
+            <p class="pub-text">
+              <strong class="fa">Wendian Luo</strong>, Tong Yu, Shengxin Dai, Bing Guo, Xuesen Lin, and Yanglin Pu,
+              “Semi-Asynchronous Energy-Efficient Federated Prototype Learning for End-Edge-Cloud Architectures,”
+              <em>Future Generation Computer Systems</em>, vol. 179, Art. no. 108351, 2026.
+            </p>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.future.2025.108351" target="_blank" rel="noopener">doi:10.1016/j.future.2025.108351 ↗</a>
+          </li>
+
+          <li class="pub-item">
+            <span class="badge badge-indigo">Journal</span>
+            <p class="pub-text">
+              <strong class="fa">Wendian Luo</strong>, Shengxin Dai, Cheng Dai, Bing Guo, Sherif Moussa, and Mubarak Alrashoud,
+              “BDTest: A Diversity-Oriented Test Case Generation Framework for Deep Neural Networks in 6G-IoT,”
+              <em>IEEE Internet of Things Journal</em>, vol. 13, no. 5, pp. 8190–8203, 2026.
+            </p>
+            <a class="pub-doi" href="https://doi.org/10.1109/JIOT.2025.3616358" target="_blank" rel="noopener">doi:10.1109/JIOT.2025.3616358 ↗</a>
+          </li>
+
+          <li class="pub-item">
+            <span class="badge badge-indigo">Journal</span>
+            <p class="pub-text">
+              Shengxin Dai, Zheng Luo, <strong class="fa">Wendian Luo</strong>, Siyi Wang, Cheng Dai, Bing Guo, and Xiaokang Zhou,
+              “Energy-Efficient Inference With Software–Hardware Co-Design for Sustainable Artificial Intelligence of Things,”
+              <em>IEEE Internet of Things Journal</em>, vol. 11, no. 24, pp. 39170–39182, 2024.
+            </p>
+            <a class="pub-doi" href="https://doi.org/10.1109/JIOT.2024.3482288" target="_blank" rel="noopener">doi:10.1109/JIOT.2024.3482288 ↗</a>
+          </li>
+        </ol>
+
+        <h3 class="sub-head">Conference Papers</h3>
+        <ol class="pub-list">
+          <li class="pub-item">
+            <span class="badge badge-teal">Conference</span>
+            <p class="pub-text">
+              <strong class="fa">Wendian Luo</strong>, Shengxin Dai, and Bing Guo,
+              “A Low Power Scheduling Algorithm for Segmented Frequency Scaling,”
+              in <em>2025 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA)</em>,
+              pp. 828–837, 2025.
+            </p>
+            <a class="pub-doi" href="https://doi.org/10.1109/ISPA67752.2025.00112" target="_blank" rel="noopener">doi:10.1109/ISPA67752.2025.00112 ↗</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PROFESSIONAL EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">05 · Industry</p>
+          <h2 class="section-title">Professional Experience</h2>
+        </header>
+
+        <div class="timeline">
+          <article class="tl-item">
+            <div class="tl-dates">
+              <span class="tl-year">Jul 2024 — Sep 2024</span>
+              <span class="tl-tag">Internship</span>
+            </div>
+            <div class="tl-node" aria-hidden="true"></div>
+            <div class="tl-body">
+              <h3 class="tl-degree">Large Language Model Algorithm R&amp;D Intern</h3>
+              <p class="tl-school">Media Intelligence Laboratory, Chengdu Sobey · Chengdu, China</p>
+              <ul class="tl-points">
+                <li>Constructed and cleaned English instruction-tuning datasets for Story-to-Scene generation, scene keyword extraction, and shot-level visual description tasks; developed scripts for translation, provenance tracing, deduplication, and format validation.</li>
+                <li>Fine-tuned and evaluated <strong>Qwen-72B</strong> with LLaMA-Factory and LoRA on an eight-GPU NVIDIA A800 server.</li>
+                <li>Deployed inference services using <strong>vLLM</strong>, Flask, and HTTP APIs; completed capability integration, API documentation, and project handover.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SELECTED PROJECTS ===================== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">06 · Selected Work</p>
+          <h2 class="section-title">Selected Projects</h2>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title">OpenClaw-Enabled Mobile Robot Control &amp; Vision-Guided Grasping</h3>
+              <span class="badge badge-indigo">System Integration</span>
+            </div>
+            <p class="card-role">Project Developer · <em>ROSMASTER M3 PRO</em></p>
+            <p class="card-meta">May 2026 — Jul 2026</p>
+            <ul class="card-points">
+              <li>Deployed and configured an <strong>OpenClaw</strong>-based natural-language robot-control platform integrating MCP/FastMCP with <strong>ROS 2</strong>, enabling tool-based access to the omnidirectional chassis, 6-DoF arm, and perception modules.</li>
+              <li>Integrated and validated a closed-loop <strong>RGB-D tracking-and-grasping</strong> workflow spanning visual grounding, mobile-base alignment, 3D grasp-point estimation, inverse-kinematics control, and collision-aware retreat; tuned grasp offsets and diagnosed visual/depth localization errors.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title">PaddlePaddle-Based 3D Medical Data Analysis Platform</h3>
+              <span class="badge badge-amber">National Second Prize</span>
+            </div>
+            <p class="card-role">Primary Developer · <em>12th China Software Cup</em></p>
+            <p class="card-meta">Jun 2023 — Aug 2023</p>
+            <ul class="card-points">
+              <li>Developed the medical platform, 3D imaging workspace, and UI/UX using <strong>Vue.js</strong>, Vuetify, and VTK.js; contributed to the Python/<strong>Django</strong> backend and Tencent Cloud COS integration.</li>
+              <li>Integrated <strong>PaddlePaddle MedicalSeg</strong> into an end-to-end workflow covering medical-image upload, AI-assisted segmentation, 3D visualization, and patient management.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title">Tingyin: Deep Learning-Based Acoustic Life Detection for Earthquake Rescue</h3>
+              <span class="badge badge-teal">National Innovation Program</span>
+            </div>
+            <p class="card-role">Core Team Member · <em>Sichuan University</em></p>
+            <p class="card-meta">Oct 2022 — Sep 2023</p>
+            <ul class="card-points">
+              <li>Developed the mobile application, conducted hardware feasibility analysis, and contributed to algorithm deployment and end-to-end system integration.</li>
+              <li>Integrated <strong>TSTNN</strong>-based speech enhancement and <strong>Whisper</strong>-based speech recognition; completed the project ahead of schedule and received First Prize in the Sichuan Division of the 2023 Chinese College Students Computer Design Competition.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">07 · Toolbox</p>
+          <h2 class="section-title">Technical Skills</h2>
+        </header>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-label">Programming</h3>
+            <div class="chip-row">
+              <span class="chip">Python</span>
+              <span class="chip">C</span>
+              <span class="chip">LaTeX</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Machine Learning</h3>
+            <div class="chip-row">
+              <span class="chip">PyTorch</span>
+              <span class="chip">CLIP</span>
+              <span class="chip">DINOv3</span>
+              <span class="chip">Federated Learning</span>
+              <span class="chip">Zero-Shot Anomaly Detection</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Edge AI</h3>
+            <div class="chip-row">
+              <span class="chip">NVIDIA Jetson Thor / AGX / Orin</span>
+              <span class="chip">DVFS</span>
+              <span class="chip">Model Deployment</span>
+              <span class="chip">vLLM</span>
+              <span class="chip">Ollama</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">AI Development</h3>
+            <div class="chip-row">
+              <span class="chip">Cursor</span>
+              <span class="chip">Codex</span>
+              <span class="chip">Trae</span>
+              <span class="chip">OpenClaw</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Languages</h3>
+            <div class="chip-row">
+              <span class="chip">Chinese — native</span>
+              <span class="chip">English — CET-4 &amp; CET-6</span>
+              <span class="chip">Preparing for IELTS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HONORS ===================== -->
+    <section class="section section-alt" id="honors">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">08 · Recognition</p>
+          <h2 class="section-title">Honors &amp; Awards</h2>
+        </header>
+
+        <ul class="honor-list">
+          <li class="honor-item">
+            <div class="honor-info">
+              <h3 class="honor-title">Outstanding Graduate of Sichuan Province</h3>
+              <p class="honor-org">Sichuan Province</p>
+            </div>
+            <span class="honor-year">2024</span>
+          </li>
+          <li class="honor-item">
+            <div class="honor-info">
+              <h3 class="honor-title">First-Class Graduate Academic Scholarship</h3>
+              <p class="honor-org">Sichuan University</p>
+            </div>
+            <span class="honor-year">2024 – 27</span>
+          </li>
+          <li class="honor-item">
+            <div class="honor-info">
+              <h3 class="honor-title">National Second Prize</h3>
+              <p class="honor-org">12th China Software Cup</p>
+            </div>
+            <span class="honor-year">2023</span>
+          </li>
+          <li class="honor-item">
+            <div class="honor-info">
+              <h3 class="honor-title">First Prize, Sichuan Division</h3>
+              <p class="honor-org">Chinese College Students Computer Design Competition</p>
+            </div>
+            <span class="honor-year">2023</span>
+          </li>
+          <li class="honor-item">
+            <div class="honor-info">
+              <h3 class="honor-title">Merit and Academic Scholarships</h3>
+              <p class="honor-org">Sichuan University</p>
+            </div>
+            <span class="honor-year">2020 – 24</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Wendian Luo</p>
+      <p class="footer-links">
+        <a href="mailto:1850245174@qq.com">Email</a>
+        <span class="footer-sep">·</span>
+        <a href="https://github.com/Mr-lwd" target="_blank" rel="noopener">GitHub</a>
+        <span class="footer-sep">·</span>
+        <a href="assets/WendianLuo_Resume.pdf" download="WendianLuo_Resume.pdf">CV</a>
+      </p>
+      <p class="footer-copy">© <span id="year">2026</span> Wendian Luo. Crafted with care in Chengdu, China.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
