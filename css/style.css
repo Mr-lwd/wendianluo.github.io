@@ -586,6 +586,21 @@ html.js .honor-item.is-visible {
    -------------------------------------------------------------------------- */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; }
 
+.project-subsection {
+  margin-top: 4.8rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid var(--border);
+}
+.project-subsection-head {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+.project-subsection-intro {
+  max-width: 700px;
+  margin-top: 1rem;
+  color: var(--ink-muted);
+}
+
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);

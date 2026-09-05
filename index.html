@@ -406,6 +406,68 @@
             </ul>
           </article>
         </div>
+
+        <div class="project-subsection" id="active-projects">
+          <header class="section-head project-subsection-head">
+            <p class="eyebrow" data-i18n="active.eyebrow">06.1 · Active Reproductions</p>
+            <h2 class="section-title" data-i18n="active.title">Recent Active Reproductions</h2>
+            <p class="project-subsection-intro" data-i18n="active.intro">Hands-on reproduction and deployment attempts across VLA, world models, and large-model inference.</p>
+          </header>
+
+          <div class="cards">
+            <article class="card active-project-card">
+              <div class="card-head">
+                <h3 class="card-title" data-i18n="active.turbovla.title">TurboVLA</h3>
+                <span class="badge badge-rose" data-i18n="active.turbovla.badge">VLA</span>
+              </div>
+              <p class="card-role" data-i18n-html="active.turbovla.role">Reproduction attempt · <a class="card-link" href="https://github.com/H-EmbodVis/TurboVLA" target="_blank" rel="noopener">Repository ↗</a></p>
+              <p class="card-meta" data-i18n="active.turbovla.meta">2026 · Jetson Thor 128GB · LIBERO goal / object / spatial</p>
+              <ul class="card-points">
+                <li data-i18n-html="active.turbovla.b1">Real-time vision-language-action model evaluation at 32 Hz on an RTX 4090 with less than 1 GB VRAM.</li>
+                <li data-i18n="active.turbovla.b2">MuJoCo video visualization is supported.</li>
+              </ul>
+            </article>
+
+            <article class="card active-project-card">
+              <div class="card-head">
+                <h3 class="card-title" data-i18n="active.isaac.title">Isaac Lab on Jetson Thor</h3>
+                <span class="badge badge-indigo" data-i18n="active.isaac.badge">VLA / RL</span>
+              </div>
+              <p class="card-role" data-i18n-html="active.isaac.role">Reproduction attempt · <a class="card-link" href="https://github.com/isaac-sim/IsaacLab" target="_blank" rel="noopener">Isaac Lab Repository ↗</a></p>
+              <p class="card-meta" data-i18n="active.isaac.meta">2026 · Jetson Thor 128GB · LIBERO goal / object / spatial</p>
+              <ul class="card-points">
+                <li data-i18n="active.isaac.b1">Isaac Lab is being evaluated as an open-source robotics research framework for reinforcement learning, imitation learning, and motion planning.</li>
+                <li data-i18n="active.isaac.b2">Isaac Sim cannot load 3D resources on Jetson Thor because of hardware capability limits; the original RL training process remains feasible, with inference visualization available through Newton/Web.</li>
+              </ul>
+            </article>
+
+            <article class="card active-project-card">
+              <div class="card-head">
+                <h3 class="card-title" data-i18n="active.abot.title">ABot-World-0</h3>
+                <span class="badge badge-teal" data-i18n="active.abot.badge">World Models</span>
+              </div>
+              <p class="card-role" data-i18n-html="active.abot.role">Reproduction attempt · <a class="card-link" href="https://github.com/amap-cvlab/ABot-World" target="_blank" rel="noopener">Repository ↗</a></p>
+              <p class="card-meta" data-i18n="active.abot.meta">2026 · Jetson Thor 128GB</p>
+              <ul class="card-points">
+                <li data-i18n="active.abot.b1">Interactive generative scenes are running at under 10 FPS in the current test.</li>
+                <li data-i18n="active.abot.b2">Jetson Thor does not support SageAttention; FlashAttention 4 works after a small FlashAttention 2 to 4 code adaptation.</li>
+              </ul>
+            </article>
+
+            <article class="card active-project-card">
+              <div class="card-head">
+                <h3 class="card-title" data-i18n="active.minimax.title">MiniMax-H3 on ComfyUI</h3>
+                <span class="badge badge-amber" data-i18n="active.minimax.badge">Large Models</span>
+              </div>
+              <p class="card-role" data-i18n-html="active.minimax.role">Deployment attempt · <a class="card-link" href="https://github.com/MiniMax-AI/MiniMax-H3" target="_blank" rel="noopener">MiniMax-H3 ↗</a> · <a class="card-link" href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noopener">ComfyUI ↗</a></p>
+              <p class="card-meta" data-i18n="active.minimax.meta">2026 · Jetson Thor 128GB · Open-source video generation</p>
+              <ul class="card-points">
+                <li data-i18n="active.minimax.b1">MiniMax-H3 is being evaluated as an open-source large-model workflow deployed through ComfyUI.</li>
+                <li data-i18n-html="active.minimax.b2">Generated video: <a class="card-link" href="https://www.bilibili.com/video/BV1tzuZ6NEu7/" target="_blank" rel="noopener">Bilibili ↗</a></li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
