@@ -98,6 +98,10 @@ window.I18N = {
     // Projects
     "proj.eyebrow": "06 · Selected Work",
     "proj.title": "Selected Projects",
+    "proj.relay.title": "Remote Relay: Cross-Device Codex Workspace",
+    "proj.relay.role": "Project Developer · <a class=\"card-link\" href=\"https://github.com/Mr-lwd/remote-codex-relay\" target=\"_blank\" rel=\"noopener\">GitHub Repository ↗</a>",
+    "proj.relay.b1": "Built a self-hosted <strong>React + FastAPI</strong> web workspace for the local <strong>Codex CLI</strong>, enabling session access across computers, tablets, and phones with live task updates, approval handling, and file exchange.",
+    "proj.relay.b2": "Implemented one-command startup, dependency installation, frontend builds, and directory migration repair, preserving existing configuration and session data.",
     "proj.robot.title": "OpenClaw-Enabled Mobile Robot Control & Vision-Guided Grasping",
     "proj.robot.badge": "System Integration",
     "proj.robot.role": "Project Developer · <em>ROSMASTER M3 PRO</em>",
@@ -279,6 +283,10 @@ window.I18N = {
     // Projects
     "proj.eyebrow": "06 · 代表项目",
     "proj.title": "代表项目",
+    "proj.relay.title": "Remote Relay：跨设备 Codex 工作空间",
+    "proj.relay.role": "项目开发者 · <a class=\"card-link\" href=\"https://github.com/Mr-lwd/remote-codex-relay\" target=\"_blank\" rel=\"noopener\">GitHub 仓库 ↗</a>",
+    "proj.relay.b1": "基于 <strong>React + FastAPI</strong> 开发连接本地 <strong>Codex CLI</strong> 的自托管网页工作空间，支持在电脑、平板与手机间访问会话，提供实时任务状态、操作审批与文件交换功能。",
+    "proj.relay.b2": "实现一条命令启动、依赖安装、前端构建与目录迁移修复，保留已有配置和会话数据。",
     "proj.robot.title": "基于 OpenClaw 的移动机器人控制与视觉引导抓取",
     "proj.robot.badge": "系统集成",
     "proj.robot.role": "项目开发者 · <em>ROSMASTER M3 PRO</em>",
