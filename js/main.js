@@ -16,7 +16,9 @@
   var yearEl = document.getElementById("year");
   var themeToggle = document.getElementById("theme-toggle");
   var langToggle = document.getElementById("lang-toggle");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
+  var navLinks = Array.prototype.slice.call(
+    document.querySelectorAll(".nav-link"),
+  );
   var sections = [];
 
   /* Collect anchor targets once */
@@ -52,65 +54,234 @@
     });
   }
 
-  /* -------------------------------------------------------------------------
-     Header shadow + back-to-top visibility + scroll-spy
-     ------------------------------------------------------------------------- */
-  function onScroll() {
-    var y = window.scrollY || window.pageYOffset;
-
-    if (header) header.classList.toggle("scrolled", y > 8);
-    if (backToTop) backToTop.classList.toggle("is-visible", y > 640);
-
-    if (sections.length) {
-      var current = sections[0].id;
-      var probe = y + window.innerHeight * 0.32;
-
-      sections.forEach(function (s) {
-        if (probe >= s.el.offsetTop) current = s.id;
-      });
-
-      if (window.innerHeight + y >= document.documentElement.scrollHeight - 8) {
-        current = sections[sections.length - 1].id;
-      }
-
-      sections.forEach(function (s) {
-        s.link.classList.toggle("is-active", s.id === current);
-      });
-    }
+  var reduceQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var motionToggle = document.getElementById("motion-toggle");
+  var motionPreference = null;
+  try {
+    motionPreference = localStorage.getItem("wl-motion");
+  } catch (e) {}
+  var motionContext = null;
+  var navObserver = null;
+  var topObserver = null;
+  function motionEnabled() {
+    return !reduceQuery.matches && motionPreference !== "off";
   }
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll, { passive: true });
-
-  if (backToTop) {
-    backToTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  function updateMotionLabel() {
+    var zh = document.documentElement.lang === "zh-CN";
+    var dict = window.I18N[zh ? "zh" : "en"];
+    motionToggle.textContent =
+      dict[motionEnabled() ? "motion.on" : "motion.off"];
+    motionToggle.setAttribute("aria-pressed", String(motionEnabled()));
+    motionToggle.disabled = reduceQuery.matches;
+    document.documentElement.setAttribute(
+      "data-motion",
+      motionEnabled() ? "on" : "off",
+    );
+  }
+  function splitName() {
+    var name = document.querySelector(".hero-name");
+    var label =
+      window.I18N[document.documentElement.lang === "zh-CN" ? "zh" : "en"][
+        "hero.name"
+      ].trim();
+    name.setAttribute("aria-label", label);
+    var words =
+      document.documentElement.lang === "zh-CN" ? [label] : label.split(/\s+/);
+    name.replaceChildren();
+    words.forEach(function (word) {
+      var line = document.createElement("span");
+      line.className = "name-line";
+      line.setAttribute("aria-hidden", "true");
+      var inner = document.createElement("span");
+      inner.className = "name-word";
+      inner.textContent = word;
+      line.appendChild(inner);
+      name.appendChild(line);
     });
   }
-
-  /* -------------------------------------------------------------------------
-     Reveal-on-scroll (IntersectionObserver)
-     ------------------------------------------------------------------------- */
-  var revealables = document.querySelectorAll(
-    ".reveal, .section-head, .card, .tl-item, .pub-item, .skill-group, .honor-item"
-  );
-
+  function markSection(id) {
+    sections.forEach(function (s) {
+      var active = s.id === id;
+      s.link.classList.toggle("is-active", active);
+      if (active) s.link.setAttribute("aria-current", "location");
+      else s.link.removeAttribute("aria-current");
+    });
+  }
+  // Semantic navigation also works when GSAP is unavailable or motion is off.
   if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(
+    navObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) markSection(entry.target.id);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { rootMargin: "-15% 0px -55% 0px", threshold: 0 },
     );
-    revealables.forEach(function (el) { io.observe(el); });
-  } else {
-    revealables.forEach(function (el) { el.classList.add("is-visible"); });
+    sections.forEach(function (s) {
+      navObserver.observe(s.el);
+    });
+    topObserver = new IntersectionObserver(function (entries) {
+      if (backToTop)
+        backToTop.classList.toggle("is-visible", !entries[0].isIntersecting);
+      if (entries[0].isIntersecting) markSection(null);
+    });
+    topObserver.observe(document.querySelector(".hero"));
   }
+  if (backToTop)
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: motionEnabled() ? "smooth" : "instant",
+      });
+    });
+  function initMotion() {
+    if (motionContext) {
+      motionContext.revert();
+      motionContext = null;
+    }
+    splitName();
+    updateMotionLabel();
+    if (!window.gsap || !window.ScrollTrigger || !motionEnabled()) return;
+    gsap.registerPlugin(ScrollTrigger);
+    motionContext = gsap.context(function () {
+      var hero = gsap.timeline({ defaults: { ease: "power3.out" } });
+      hero
+        .from(".hero .eyebrow", { y: 18, opacity: 0, duration: 0.7 })
+        .from(
+          ".name-word",
+          { yPercent: 110, rotate: 3, duration: 1.1, stagger: 0.13 },
+          0.08,
+        )
+        .from(".hero-title", { y: 22, opacity: 0, duration: 0.8 }, 0.38)
+        .from(
+          ".hero-cta .btn",
+          { y: 20, opacity: 0, duration: 0.7, stagger: 0.1 },
+          0.55,
+        )
+        .from(
+          ".portrait",
+          { y: 55, rotation: -7, scale: 0.92, duration: 1.25 },
+          0.15,
+        )
+        .from(
+          ".orbit",
+          { scale: 0.7, opacity: 0, duration: 1.4, stagger: 0.08 },
+          0.3,
+        );
+      // A slow orbital path supports the connected-systems motif; it only runs on screen.
+      var orbit = gsap.to(".orbit-three", {
+        rotation: 360,
+        duration: 70,
+        repeat: -1,
+        ease: "none",
+        paused: true,
+      });
+      ScrollTrigger.create({
+        trigger: ".hero",
+        start: "top bottom",
+        end: "bottom top",
+        onToggle: function (self) {
+          if (self.isActive) orbit.play();
+          else orbit.pause();
+        },
+      });
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        gsap.to(".hero-photo", {
+          y: 65,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+      }
+      gsap.to(".reading-progress", {
+        scaleX: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.2,
+        },
+      });
+      document
+        .querySelectorAll(
+          ".section-head,.about-summary,.about-interests,.project-subsection-head",
+        )
+        .forEach(function (el) {
+          gsap.from(el, {
+            y: 35,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 92%", once: true },
+          });
+        });
+      document
+        .querySelectorAll(".cards,.pub-list,.skills-grid,.honor-list,.timeline")
+        .forEach(function (group) {
+          Array.from(group.children).forEach(function (el, i) {
+            gsap.from(el, {
+              y: 45,
+              opacity: 0,
+              duration: 0.9,
+              delay: (i % 2) * 0.1,
+              ease: "power3.out",
+              scrollTrigger: { trigger: el, start: "top 94%", once: true },
+            });
+          });
+        });
+      // Give each research chapter a little depth as it arrives, without trapping scrolling.
+      document.querySelectorAll("#research .card").forEach(function (el) {
+        gsap.from(el, {
+          scale: 0.94,
+          x: 20,
+          transformOrigin: "left center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "top 55%",
+            scrub: 0.6,
+          },
+        });
+      });
+      document.querySelectorAll(".tl-node").forEach(function (el) {
+        gsap.from(el, {
+          scale: 0,
+          duration: 0.65,
+          ease: "back.out(2)",
+          scrollTrigger: { trigger: el, start: "top 90%", once: true },
+        });
+      });
+      gsap.from(".footer-name", {
+        y: 35,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".site-footer",
+          start: "top 95%",
+          once: true,
+        },
+      });
+    });
+  }
+  if (motionToggle)
+    motionToggle.addEventListener("click", function () {
+      motionPreference = motionEnabled() ? "off" : "on";
+      try {
+        localStorage.setItem("wl-motion", motionPreference);
+      } catch (e) {}
+      initMotion();
+    });
+  reduceQuery.addEventListener("change", initMotion);
+  document.addEventListener("visibilitychange", function () {
+    if (window.gsap) gsap.globalTimeline.paused(document.hidden);
+  });
 
   /* -------------------------------------------------------------------------
      Dark mode
@@ -121,13 +292,17 @@
     } else {
       document.documentElement.removeAttribute("data-theme");
     }
-    try { localStorage.setItem("wl-theme", theme); } catch (e) {}
+    try {
+      localStorage.setItem("wl-theme", theme);
+    } catch (e) {}
   }
 
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
-      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      var isDark =
+        document.documentElement.getAttribute("data-theme") === "dark";
       setTheme(isDark ? "light" : "dark");
+      themeToggle.setAttribute("aria-pressed", String(!isDark));
     });
   }
 
@@ -147,14 +322,21 @@
     var download = isZh ? "WendianLuo_Resume_CN.pdf" : "WendianLuo_Resume.pdf";
     ["cv-nav", "cv-hero"].forEach(function (id) {
       var el = document.getElementById(id);
-      if (el) { el.href = href; el.setAttribute("download", download); }
+      if (el) {
+        el.href = href;
+        el.setAttribute("download", download);
+      }
     });
     var footerCv = document.querySelector('[data-i18n="footer.cv"]');
-    if (footerCv) { footerCv.href = href; footerCv.setAttribute("download", download); }
+    if (footerCv) {
+      footerCv.href = href;
+      footerCv.setAttribute("download", download);
+    }
   }
 
   function applyLanguage(lang) {
-    var dict = (window.I18N && window.I18N[lang === "zh-CN" ? "zh" : "en"]) || {};
+    var dict =
+      (window.I18N && window.I18N[lang === "zh-CN" ? "zh" : "en"]) || {};
 
     document.documentElement.lang = lang;
     document.documentElement.setAttribute("data-lang", lang);
@@ -174,7 +356,8 @@
 
     if (dict["meta.title"]) document.title = dict["meta.title"];
     var md = document.querySelector('meta[name="description"]');
-    if (md && dict["meta.description"]) md.setAttribute("content", dict["meta.description"]);
+    if (md && dict["meta.description"])
+      md.setAttribute("content", dict["meta.description"]);
 
     if (langToggle) langToggle.textContent = lang === "zh-CN" ? "EN" : "中文";
     setCvHrefs(lang);
@@ -183,17 +366,46 @@
 
   if (langToggle) {
     langToggle.addEventListener("click", function () {
-      var current = document.documentElement.getAttribute("data-lang") === "zh-CN" ? "zh-CN" : "en";
+      var current =
+        document.documentElement.getAttribute("data-lang") === "zh-CN"
+          ? "zh-CN"
+          : "en";
       var next = current === "zh-CN" ? "en" : "zh-CN";
+      if (motionContext) {
+        motionContext.revert();
+        motionContext = null;
+      }
       applyLanguage(next);
-      try { localStorage.setItem("wl-lang", next); } catch (e) {}
+      initMotion();
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+      try {
+        localStorage.setItem("wl-lang", next);
+      } catch (e) {}
     });
   }
 
   /* -------------------------------------------------------------------------
      Init — apply persisted language, set year, paint scroll state
      ------------------------------------------------------------------------- */
-  var initialLang = document.documentElement.getAttribute("data-lang") === "zh-CN" ? "zh-CN" : "en";
+  var initialLang =
+    document.documentElement.getAttribute("data-lang") === "zh-CN"
+      ? "zh-CN"
+      : "en";
   applyLanguage(initialLang);
-  onScroll();
+  initMotion();
+  if (themeToggle)
+    themeToggle.setAttribute(
+      "aria-pressed",
+      String(document.documentElement.getAttribute("data-theme") === "dark"),
+    );
+  window.addEventListener("load", function () {
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  });
+  window.addEventListener("beforeprint", function () {
+    if (motionContext) {
+      motionContext.revert();
+      motionContext = null;
+    }
+  });
+  window.addEventListener("afterprint", initMotion);
 })();

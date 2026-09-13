@@ -1,13 +1,16 @@
 /* ============================================================================
-   i18n — English / Chinese (Simplified) dictionary
+   i18n · English / Chinese (Simplified) dictionary
    Full bilingual site. Paper titles, author lists, journal names, and DOIs
    intentionally remain English in both languages (academic convention).
    ========================================================================== */
 window.I18N = {
   en: {
+    "a11y.skip": "Skip to content",
+    "motion.on": "Motion on",
+    "motion.off": "Motion off",
     // Document
-    "meta.title": "Wendian Luo — Research & Engineering",
-    "meta.description": "Wendian Luo — M.Eng. candidate in Computer Technology at Sichuan University. Research in edge intelligence, federated learning, computer vision, and energy-efficient computing.",
+    "meta.title": "Wendian Luo · Research & Engineering",
+    "meta.description": "Wendian Luo · M.Eng. candidate in Computer Technology at Sichuan University. Research in edge intelligence, federated learning, computer vision, and energy-efficient computing.",
 
     // Navigation
     "brand.mark": "W",
@@ -67,7 +70,7 @@ window.I18N = {
     "research.tmsc.b1": "Developed a zero-shot anomaly detection pipeline using <strong>DINOv3</strong> and <strong>CLIP</strong>, integrating multi-layer representations, dual-branch prompt adapters, cross-modal attention, and three-region semantic calibration.",
     "research.fedsae.title": "FedSAE: Semi-Asynchronous Energy-Efficient Federated Prototype Learning",
     "research.fedsae.role": "First Author and Researcher · Sichuan University",
-    "research.fedsae.b1": "Designed a semi-asynchronous <strong>end–edge–cloud federated prototype learning</strong> framework that exchanges class-level feature statistics instead of raw data or full model parameters.",
+    "research.fedsae.b1": "Designed a semi-asynchronous <strong>end-edge-cloud federated prototype learning</strong> framework that exchanges class-level feature statistics instead of raw data or full model parameters.",
     "research.fedsae.b2": "Validated the energy-saving effectiveness of the framework's dynamic <strong>DVFS</strong> mechanism through experiments on an <strong>NVIDIA Jetson TX2</strong> edge platform.",
     "research.lpsafs.title": "LPSAFS: Low-Power Scheduling with Segmented Frequency Scaling",
     "research.lpsafs.role": "First Author and Researcher · Sichuan University",
@@ -151,8 +154,8 @@ window.I18N = {
     "skills.chip.federated": "Federated Learning",
     "skills.chip.zsad": "Zero-Shot Anomaly Detection",
     "skills.chip.modelDeploy": "Model Deployment",
-    "skills.chip.zh": "Chinese — native",
-    "skills.chip.en": "English — CET-4 & CET-6",
+    "skills.chip.zh": "Chinese · native",
+    "skills.chip.en": "English · CET-4 & CET-6",
     "skills.chip.ielts": "Preparing for IELTS",
 
     // Honors
@@ -179,13 +182,16 @@ window.I18N = {
     "aria.navToggle": "Toggle navigation",
     "aria.backToTop": "Back to top",
     "aria.themeToggle": "Switch color theme",
-    "aria.langToggle": "Switch to Chinese"
+    "aria.langToggle": "中文 · Switch to Chinese"
   },
 
   zh: {
+    "a11y.skip": "跳转到正文",
+    "motion.on": "动效开启",
+    "motion.off": "动效关闭",
     // Document
-    "meta.title": "罗文典 — 研究与工程",
-    "meta.description": "罗文典 — 四川大学计算机技术专业硕士研究生。研究方向：边缘智能、联邦学习、计算机视觉与节能计算。",
+    "meta.title": "罗文典 · 研究与工程",
+    "meta.description": "罗文典 · 四川大学计算机技术专业硕士研究生。研究方向：边缘智能、联邦学习、计算机视觉与节能计算。",
 
     // Navigation
     "brand.mark": "罗",
@@ -245,7 +251,7 @@ window.I18N = {
     "research.tmsc.b1": "基于 <strong>DINOv3</strong> 与 <strong>CLIP</strong> 构建零样本异常检测流水线，融合多层表征、双分支提示适配器、跨模态注意力与三区域语义校准。",
     "research.fedsae.title": "FedSAE：半异步节能联邦原型学习",
     "research.fedsae.role": "第一作者 · 研究者 · 四川大学",
-    "research.fedsae.b1": "设计了半异步 <strong>端—边—云联邦原型学习</strong> 框架，仅交换类级特征统计量，而非原始数据或完整模型参数。",
+    "research.fedsae.b1": "设计了半异步 <strong>端·边·云联邦原型学习</strong> 框架，仅交换类级特征统计量，而非原始数据或完整模型参数。",
     "research.fedsae.b2": "在 <strong>NVIDIA Jetson TX2</strong> 边缘平台上进行实验，验证了框架动态 <strong>DVFS</strong> 机制的节能有效性。",
     "research.lpsafs.title": "LPSAFS：分段变频的低功耗调度",
     "research.lpsafs.role": "第一作者 · 研究者 · 四川大学",
@@ -297,7 +303,7 @@ window.I18N = {
     "active.turbovla.badge": "VLA",
     "active.turbovla.role": "复现尝试 · <a class=\"card-link\" href=\"https://github.com/H-EmbodVis/TurboVLA\" target=\"_blank\" rel=\"noopener\">项目仓库 ↗</a>",
     "active.turbovla.meta": "2026 · Jetson Thor 128GB · LIBERO goal / object / spatial",
-    "active.turbovla.b1": "在 RTX 4090 上以 32 Hz 评测实时视觉—语言—动作模型，显存占用低于 1 GB。",
+    "active.turbovla.b1": "在 RTX 4090 上以 32 Hz 评测实时视觉·语言·动作模型，显存占用低于 1 GB。",
     "active.turbovla.b2": "支持 MuJoCo 视频可视化。",
     "active.isaac.title": "Jetson Thor 上的 Isaac Lab",
     "active.isaac.badge": "VLA / RL",
@@ -357,6 +363,6 @@ window.I18N = {
     "aria.navToggle": "切换导航菜单",
     "aria.backToTop": "回到顶部",
     "aria.themeToggle": "切换配色主题",
-    "aria.langToggle": "切换到英文"
+    "aria.langToggle": "EN · 切换到英文"
   }
 };

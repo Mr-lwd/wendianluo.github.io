@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wendian Luo — Research &amp; Engineering</title>
-  <meta name="description" content="Wendian Luo — M.Eng. candidate in Computer Technology at Sichuan University. Research in edge intelligence, federated learning, computer vision, and energy-efficient computing." />
+  <title>Wendian Luo · Research &amp; Engineering</title>
+  <meta name="description" content="Wendian Luo · M.Eng. candidate in Computer Technology at Sichuan University. Research in edge intelligence, federated learning, computer vision, and energy-efficient computing." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <!-- Apply persisted theme/language before first paint (avoids FOUC) -->
@@ -23,20 +23,18 @@
     })();
   </script>
 
-  <!-- Typography (Fontsource via jsDelivr — China-accessible CDN) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/inter/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/playfair-display/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/jetbrains-mono/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/index.css" />
-
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/profile.jpg" as="image" />
+  <link rel="stylesheet" href="css/style.css?v=20260911" />
 </head>
 <body>
+  <a class="skip-link" href="#about" data-i18n="a11y.skip">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"></div>
 
   <!-- ===================== NAVIGATION ===================== -->
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Back to top">
+      <a class="brand" href="#top">
         <span class="brand-mark" data-i18n="brand.mark">W</span>
         <span class="brand-name" data-i18n="brand.name">Wendian Luo</span>
       </a>
@@ -80,11 +78,6 @@
           <p class="eyebrow" data-i18n="hero.eyebrow">Sichuan University · College of Computer Science</p>
           <h1 class="hero-name" data-i18n="hero.name">Wendian&nbsp;Luo</h1>
           <p class="hero-title" data-i18n="hero.title">M.Eng. candidate in Computer Technology</p>
-          <p class="hero-quote" data-i18n-html="hero.quote">
-            Research interests in <em>Edge Intelligence</em>, <em>Federated Learning</em>,
-            <em>Computer Vision</em>, <em>Large Language Models</em>, and <em>Embodied Intelligence</em>.
-          </p>
-
           <div class="hero-cta">
             <a class="btn btn-primary" id="cv-hero" href="assets/WendianLuo_Resume.pdf" download="WendianLuo_Resume.pdf">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
@@ -95,6 +88,26 @@
               <span data-i18n="cta.viewPubs">View Publications</span>
             </a>
           </div>
+
+
+        </div>
+
+        <div class="hero-photo">
+          <div class="orbital-frame" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div></div>
+          <figure class="portrait">
+            <img src="assets/profile.jpg" alt="Portrait of Wendian Luo" width="302" height="429" fetchpriority="high" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="about.eyebrow">01 · Profile</p>
+          <h2 class="section-title" data-i18n="about.title">About Me</h2>
+        </header>
 
           <ul class="contact-list" aria-label="Contact information">
             <li>
@@ -120,26 +133,13 @@
               <span data-i18n="hero.location">Chengdu, China</span>
             </li>
           </ul>
-        </div>
-
-        <div class="hero-photo">
-          <figure class="portrait">
-            <img src="assets/profile.jpg" alt="Portrait of Wendian Luo" width="302" height="429" />
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== ABOUT ===================== -->
-    <section class="section" id="about">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow" data-i18n="about.eyebrow">01 · Profile</p>
-          <h2 class="section-title" data-i18n="about.title">About Me</h2>
-        </header>
-
         <div class="about-grid">
-          <div class="about-summary">
+          <div class="about-summary">          <p class="hero-quote" data-i18n-html="hero.quote">
+            Research interests in <em>Edge Intelligence</em>, <em>Federated Learning</em>,
+            <em>Computer Vision</em>, <em>Large Language Models</em>, and <em>Embodied Intelligence</em>.
+          </p>
+
+
             <p class="lead" data-i18n-html="about.summaryLead">
               Master's candidate in <strong>Computer Technology</strong> at Sichuan University with research
               experience in <strong>edge intelligence</strong>, <strong>federated learning</strong>,
@@ -178,7 +178,7 @@
         <div class="timeline">
           <article class="tl-item">
             <div class="tl-dates">
-              <span class="tl-year">Sep 2024 — Jun 2027</span>
+              <span class="tl-year">Sep 2024 · Jun 2027</span>
               <span class="tl-tag" data-i18n="edu.tagExpected">Expected</span>
             </div>
             <div class="tl-track" aria-hidden="true"><span class="tl-node"></span></div>
@@ -194,7 +194,7 @@
 
           <article class="tl-item">
             <div class="tl-dates">
-              <span class="tl-year">Sep 2020 — Jun 2024</span>
+              <span class="tl-year">Sep 2020 · Jun 2024</span>
             </div>
             <div class="tl-track" aria-hidden="true"><span class="tl-node"></span></div>
             <div class="tl-body">
@@ -242,7 +242,7 @@
             <p class="card-role" data-i18n="research.fedsae.role">First Author and Researcher · Sichuan University</p>
             <p class="card-meta">2025</p>
             <ul class="card-points">
-              <li data-i18n-html="research.fedsae.b1">Designed a semi-asynchronous <strong>end–edge–cloud federated prototype learning</strong> framework that exchanges class-level feature statistics instead of raw data or full model parameters.</li>
+              <li data-i18n-html="research.fedsae.b1">Designed a semi-asynchronous <strong>end-edge-cloud federated prototype learning</strong> framework that exchanges class-level feature statistics instead of raw data or full model parameters.</li>
               <li data-i18n-html="research.fedsae.b2">Validated the energy-saving effectiveness of the framework's dynamic <strong>DVFS</strong> mechanism through experiments on an <strong>NVIDIA Jetson TX2</strong> edge platform.</li>
             </ul>
           </article>
@@ -297,7 +297,7 @@
             <p class="pub-text">
               <strong class="fa">Wendian Luo</strong>, Shengxin Dai, Cheng Dai, Bing Guo, Sherif Moussa, and Mubarak Alrashoud,
               “BDTest: A Diversity-Oriented Test Case Generation Framework for Deep Neural Networks in 6G-IoT,”
-              <em>IEEE Internet of Things Journal</em>, vol. 13, no. 5, pp. 8190–8203, 2026.
+              <em>IEEE Internet of Things Journal</em>, vol. 13, no. 5, pp. 8190-8203, 2026.
             </p>
             <a class="pub-doi" href="https://doi.org/10.1109/JIOT.2025.3616358" target="_blank" rel="noopener">doi:10.1109/JIOT.2025.3616358 ↗</a>
           </li>
@@ -306,8 +306,8 @@
             <span class="badge badge-indigo" data-i18n="badge.journal">Journal</span>
             <p class="pub-text">
               Shengxin Dai, Zheng Luo, <strong class="fa">Wendian Luo</strong>, Siyi Wang, Cheng Dai, Bing Guo, and Xiaokang Zhou,
-              “Energy-Efficient Inference With Software–Hardware Co-Design for Sustainable Artificial Intelligence of Things,”
-              <em>IEEE Internet of Things Journal</em>, vol. 11, no. 24, pp. 39170–39182, 2024.
+              “Energy-Efficient Inference With Software-Hardware Co-Design for Sustainable Artificial Intelligence of Things,”
+              <em>IEEE Internet of Things Journal</em>, vol. 11, no. 24, pp. 39170-39182, 2024.
             </p>
             <a class="pub-doi" href="https://doi.org/10.1109/JIOT.2024.3482288" target="_blank" rel="noopener">doi:10.1109/JIOT.2024.3482288 ↗</a>
           </li>
@@ -321,7 +321,7 @@
               <strong class="fa">Wendian Luo</strong>, Shengxin Dai, and Bing Guo,
               “A Low Power Scheduling Algorithm for Segmented Frequency Scaling,”
               in <em>2025 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA)</em>,
-              pp. 828–837, 2025.
+              pp. 828-837, 2025.
             </p>
             <a class="pub-doi" href="https://doi.org/10.1109/ISPA67752.2025.00112" target="_blank" rel="noopener">doi:10.1109/ISPA67752.2025.00112 ↗</a>
           </li>
@@ -340,7 +340,7 @@
         <div class="timeline">
           <article class="tl-item">
             <div class="tl-dates">
-              <span class="tl-year">Jul 2024 — Sep 2024</span>
+              <span class="tl-year">Jul 2024 · Sep 2024</span>
               <span class="tl-tag" data-i18n="exp.tagInternship">Internship</span>
             </div>
             <div class="tl-track" aria-hidden="true"><span class="tl-node"></span></div>
@@ -373,7 +373,7 @@
               <span class="badge badge-indigo" data-i18n="proj.robot.badge">System Integration</span>
             </div>
             <p class="card-role" data-i18n-html="proj.robot.role">Project Developer · <em>ROSMASTER M3 PRO</em></p>
-            <p class="card-meta">May 2026 — Jul 2026</p>
+            <p class="card-meta">May 2026 · Jul 2026</p>
             <ul class="card-points">
               <li data-i18n-html="proj.robot.b1">Deployed and configured an <strong>OpenClaw</strong>-based natural-language robot-control platform integrating MCP/FastMCP with <strong>ROS 2</strong>, enabling tool-based access to the omnidirectional chassis, 6-DoF arm, and perception modules.</li>
               <li data-i18n-html="proj.robot.b2">Integrated and validated a closed-loop <strong>RGB-D tracking-and-grasping</strong> workflow spanning visual grounding, mobile-base alignment, 3D grasp-point estimation, inverse-kinematics control, and collision-aware retreat; tuned grasp offsets and diagnosed visual/depth localization errors.</li>
@@ -386,7 +386,7 @@
               <span class="badge badge-amber" data-i18n="proj.medical.badge">National Second Prize</span>
             </div>
             <p class="card-role" data-i18n-html="proj.medical.role">Primary Developer · <em>12th China Software Cup</em></p>
-            <p class="card-meta">Jun 2023 — Aug 2023</p>
+            <p class="card-meta">Jun 2023 · Aug 2023</p>
             <ul class="card-points">
               <li data-i18n-html="proj.medical.b1">Developed the medical platform, 3D imaging workspace, and UI/UX using <strong>Vue.js</strong>, Vuetify, and VTK.js; contributed to the Python/<strong>Django</strong> backend and Tencent Cloud COS integration.</li>
               <li data-i18n-html="proj.medical.b2">Integrated <strong>PaddlePaddle MedicalSeg</strong> into an end-to-end workflow covering medical-image upload, AI-assisted segmentation, 3D visualization, and patient management.</li>
@@ -399,7 +399,7 @@
               <span class="badge badge-teal" data-i18n="proj.tingyin.badge">National Innovation Program</span>
             </div>
             <p class="card-role" data-i18n-html="proj.tingyin.role">Core Team Member · <em>Sichuan University</em></p>
-            <p class="card-meta">Oct 2022 — Sep 2023</p>
+            <p class="card-meta">Oct 2022 · Sep 2023</p>
             <ul class="card-points">
               <li data-i18n="proj.tingyin.b1">Developed the mobile application, conducted hardware feasibility analysis, and contributed to algorithm deployment and end-to-end system integration.</li>
               <li data-i18n-html="proj.tingyin.b2">Integrated <strong>TSTNN</strong>-based speech enhancement and <strong>Whisper</strong>-based speech recognition; completed the project ahead of schedule and received First Prize in the Sichuan Division of the 2023 Chinese College Students Computer Design Competition.</li>
@@ -524,8 +524,8 @@
           <div class="skill-group">
             <h3 class="skill-label" data-i18n="skills.label.languages">Languages</h3>
             <div class="chip-row">
-              <span class="chip" data-i18n="skills.chip.zh">Chinese — native</span>
-              <span class="chip" data-i18n="skills.chip.en">English — CET-4 &amp; CET-6</span>
+              <span class="chip" data-i18n="skills.chip.zh">Chinese · native</span>
+              <span class="chip" data-i18n="skills.chip.en">English · CET-4 &amp; CET-6</span>
               <span class="chip" data-i18n="skills.chip.ielts">Preparing for IELTS</span>
             </div>
           </div>
@@ -554,7 +554,7 @@
               <h3 class="honor-title" data-i18n="honors.scholarship.title">First-Class Graduate Academic Scholarship</h3>
               <p class="honor-org" data-i18n="honors.scholarship.org">Sichuan University</p>
             </div>
-            <span class="honor-year">2024 – 27</span>
+            <span class="honor-year">2024 - 27</span>
           </li>
           <li class="honor-item">
             <div class="honor-info">
@@ -575,7 +575,7 @@
               <h3 class="honor-title" data-i18n="honors.merit.title">Merit and Academic Scholarships</h3>
               <p class="honor-org" data-i18n="honors.merit.org">Sichuan University</p>
             </div>
-            <span class="honor-year">2020 – 24</span>
+            <span class="honor-year">2020 - 24</span>
           </li>
         </ul>
       </div>
@@ -602,7 +602,10 @@
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg>
   </button>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/i18n.js?v=20260911"></script>
+  <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true">Motion on</button>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/main.js?v=20260911"></script>
 </body>
 </html>
