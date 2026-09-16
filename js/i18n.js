@@ -57,7 +57,7 @@ window.I18N = {
     "edu.meng.scholarship": "First-Class Graduate Academic Scholarship.",
     "edu.beng.degree": "B.Eng. in Computer Science and Technology",
     "edu.beng.school": "Sichuan University · College of Computer Science · Chengdu, China",
-    "edu.beng.gpa": "GPA: 3.76 / 4.00; GPA ranking: 38 / 318 (top 12%); graduate recommendation ranking: 8 / 318.",
+    "edu.beng.gpa": "GPA: 3.72 / 4.00; GPA ranking: 38 / 318 (top 12%); graduate recommendation ranking: 8 / 318.",
     "edu.beng.grad": "Outstanding Graduate of Sichuan Province, 2024.",
 
     // Research experience
@@ -242,7 +242,7 @@ window.I18N = {
     "edu.meng.scholarship": "一等学业奖学金。",
     "edu.beng.degree": "计算机科学与技术 · 工学学士",
     "edu.beng.school": "四川大学 · 计算机学院 · 成都，中国",
-    "edu.beng.gpa": "GPA：3.76 / 4.00；专业排名 38 / 318（前 12%）；保研排名 8 / 318。",
+    "edu.beng.gpa": "GPA：3.72 / 4.00；专业排名 38 / 318（前 12%）；保研排名 8 / 318。",
     "edu.beng.grad": "四川省优秀毕业生，2024。",
 
     // Research experience
