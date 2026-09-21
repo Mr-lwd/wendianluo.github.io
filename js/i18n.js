@@ -82,7 +82,7 @@ window.I18N = {
     "pubs.journalHead": "Journal Articles",
     "pubs.confHead": "Conference Papers",
     "badge.journal": "Journal",
-    "badge.majorRevision": "Major Revision",
+    "badge.accepted": "Accepted",
     "badge.conference": "Conference",
 
     // Professional experience
@@ -267,7 +267,7 @@ window.I18N = {
     "pubs.journalHead": "期刊论文",
     "pubs.confHead": "会议论文",
     "badge.journal": "期刊",
-    "badge.majorRevision": "大修中",
+    "badge.accepted": "已录用",
     "badge.conference": "会议",
 
     // Professional experience
